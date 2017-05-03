@@ -1,0 +1,5 @@
+com\niit\shopingbackend\backproject\model\User.class
+com\niit\shopingbackend\backproject\DAO\UserDAO.class
+com\niit\shopingbackend\backproject\DAO\UserDAOImpl.class
+com\niit\shopingbackend\backproject\App.class
+com\niit\shopingbackend\backproject\model\ApplicationContextConfig.class
