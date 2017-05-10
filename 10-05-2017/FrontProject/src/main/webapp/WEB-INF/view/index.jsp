@@ -78,8 +78,6 @@ h2 {
 									color="black">Category</font></a></li>
 							<li class="active"><a href="supl"><font size="4"
 									color="black">Supplier</font></a></li>
-							<li class="active"><a href="check"><font size="4" 
-							        color="red">Check</font></a></li>
 							<li class="active"><a href="head"><font size="4"
 									color="black">Header</font></a></li> 
 					
@@ -120,10 +118,10 @@ h2 {
   <img src="/resources/images/Water.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 
 </div>
 
-<center>
-<h2><font size="10">its my first Demo Page,not first but at least not last </font></h2>
-<h2><span class="glyphicon glyphicon-copyright-mark"></span> Copyright</h2>
-</center>
+<h2><center>
+<font size="10">its my first Demo Page,not first but at least not last </font>
+<span class="glyphicon glyphicon-copyright-mark">Copyright</span> 
+</center></h2>
 
 </body>
 </html>

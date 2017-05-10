@@ -1,6 +1,6 @@
 package com.niit.shopingbackend.backproject.model;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -26,13 +26,13 @@ public class Product
 	
 	
 	private String supplierId;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="supplierId",insertable=false,nullable=false,updatable=false)
 	Supplier supplier;
 
 	
 	private String categoryId;
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="categoryId",insertable=false,nullable=false,updatable=false)
 	Category category;
 

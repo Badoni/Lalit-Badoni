@@ -14,11 +14,11 @@ public class Supplier
 {
 	@Id
 	private String supplierId;
-	@OneToMany(mappedBy="supplierId",fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="supplierId",fetch=FetchType.EAGER)
 	private Set<Product>product;
 	
 	
-	//@Column(unique=true)
+	@Column(unique=true)
 	private String suppliername;
 	private String suppliercity;
 	

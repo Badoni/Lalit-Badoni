@@ -18,7 +18,7 @@ public class Category
 
 	@Id
 	private String categoryId;
-	@OneToMany(mappedBy="category",fetch=FetchType.EAGER,cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
 	private Set<Product>product;
 	
 	@Column(unique=true)
