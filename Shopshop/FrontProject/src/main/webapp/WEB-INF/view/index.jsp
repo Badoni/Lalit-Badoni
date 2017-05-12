@@ -38,9 +38,12 @@ h2 {
 }
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: auto;
+	width: 50%;
 	margin: auto;
 }
+
+
+
 </style>
 
 
@@ -68,7 +71,7 @@ h2 {
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#"><font size="3.5"
+					<li class="active"><a href="index"><font size="3.5"
 							color="#F5FFFA">Home</font></a></li>
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#"><font size="3.5"
@@ -84,8 +87,9 @@ h2 {
 							<li class="active"><a href="supl"><font size="4"
 									color="black">Supplier</font></a></li>
 						
-							<li class="active"><a href="head"><font size="4"
-									color="black">Header</font></a></li>
+							
+									
+									
 
 						</ul></li>
 
@@ -98,7 +102,7 @@ h2 {
 
 <li class="active">
 <c:forEach items="${categoryList}" var="cat">
-<a href="ProductByCategory/${cat.categoryId}">${cat.categoryId}><font size="3.5"
+<a href="ProductByCategory/${cat.categoryId}">${cat.categoryId}<font size="3.5"
 									color="black"></font></a>
 									
 									</c:forEach>
@@ -162,7 +166,7 @@ h2 {
 
 			<div class="item active">
 				<img src="resources/images/Carosel/image1.jpg" alt="Image1"
-					style="width: 50%">
+					width="1000" height="300">
 				<div class="carousel-caption">
 					<h3>Image 1</h3>
 					<p>Nyc Look</p>
@@ -171,7 +175,7 @@ h2 {
 
 			<div class="item">
 				<img src="resources/images/Carosel/image2.jpg" alt="Image2"
-					style="width: 50%">
+					width="1000" height="300">
 				<div class="carousel-caption">
 					<h3>Image2</h3>
 					<p>Look Image</p>
@@ -180,7 +184,7 @@ h2 {
 
 			<div class="item">
 				<img src="resources/images/Carosel/image3.jpg" alt="Image3"
-					style="width: 50%">
+					width="1000" height="300">
 				<div class="carousel-caption">
 					<h3>Image3</h3>
 					<p>Look Image</p>
@@ -189,16 +193,16 @@ h2 {
 
 			<div class="item">
 				<img src="resources/images/Carosel/image4.jpg" alt="Image3"
-					style="width: 50%">
+					width="1000" height="300">
 				<div class="carousel-caption">
-					<h3>Image5</h3>
+					<h3>Image4</h3>
 					<p>Look Image</p>
 				</div>
 			</div>
 
 			<div class="item">
 				<img src="resources/images/Carosel/image5.jpg" alt="Image3"
-					style="width: 50%">
+					width="1000" height="300">
 				<div class="carousel-caption">
 					<h3>Image5</h3>
 					<p>Look Photo</p>

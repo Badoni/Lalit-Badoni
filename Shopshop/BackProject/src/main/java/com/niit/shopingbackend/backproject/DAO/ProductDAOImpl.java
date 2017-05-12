@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.shopingbackend.backproject.model.Product;
-import com.niit.shopingbackend.backproject.model.Supplier;
 
 
 @Repository("productDAO")
@@ -85,8 +84,9 @@ public class ProductDAOImpl implements ProductDAO
     query.setString(0, categoryId);
     List<Product> listCategoryProduct = (List<Product>) query.getResultList();
     return listCategoryProduct;
-	
 	}
+
+	
 
 }
 

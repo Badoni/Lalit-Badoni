@@ -10,7 +10,8 @@ import com.niit.shopingbackend.backproject.DAO.CategoryDAO;
 
 @Controller
 public class HomeController
-{	@Autowired
+{	
+	@Autowired
 	HttpSession httpSession;
 
 @Autowired
@@ -22,6 +23,8 @@ CategoryDAO categoryDAO;
 		httpSession.setAttribute("categoryList", categoryDAO.getAllCategory());
 		return "index";
 	}
+	
+	
 	
 
 	

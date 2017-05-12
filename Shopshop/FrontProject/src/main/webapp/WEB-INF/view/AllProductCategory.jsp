@@ -14,18 +14,73 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<style type="text/css">
+.productbox {
+    background-color:#ffffff;
+    padding:10px;
+	margin:5px 0;
+    border: 1px solid #cfcfcf;
+    -moz-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    -webkit-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    -o-box-shadow: 2px 2px 4px 0px #cfcfcf;
+    box-shadow: 2px 2px 4px 0px #cfcfcf;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=134, Strength=4);
+}
+
+.producttitle {
+    font-weight:bold;
+    font-size:1.2em;
+	padding:5px 0 5px 0;
+}
+
+.producttext {
+    
+}
+
+.productprice {
+	border-top:1px solid #dadada;
+	padding-top:5px;
+}
+
+.pricetext {
+	font-weight:bold;
+	font-size:1.4em;
+}
+</style>
+
 <title>Insert title here</title>
 </head>
 <body>
 
-<pc:forEach items="${listCategoryProduct}" var="cp">
 
- <img  alt="${cp.productname}" src="${image}${cp.productId}.jpg">
- 
- 
- <%---<img src="<c:url value='/resources/images/${cp.productId}.jpg'/>">--%>
+<div class="container-fluid">
 
+
+<div class="col-sm-3">
+<pc:forEach items="${listCategoryProduct}" var="cp">    
+   <div class="productbox">
+  
+  
+    
+  <img src="${image}${cp.productId}.jpg" class="img-responsive"  alt="${cp.productname}" width="10%">
+     <div class=" ${cp.productname}"></div>
+       <p class="${cp.productdescription}"></p>
+      
+        
+                    <a href="${pageContext.request.contextPath}/More/${cp.productId}">More Details</a>
+               
+          
+
+
+
+
+</div>
 </pc:forEach>
+</div>
+</div>
+
+
 
 </body>
 </html>
