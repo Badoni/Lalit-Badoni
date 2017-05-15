@@ -37,10 +37,11 @@ h2 {
 	text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px white;
 }
 
-.carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 50%;
-	margin: auto;
-}
+  .carousel-inner img {
+      width: 80%; 
+      margin: auto;
+      height: 80%;
+  }
 
 
 
