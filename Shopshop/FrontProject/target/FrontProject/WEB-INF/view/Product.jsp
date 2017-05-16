@@ -28,7 +28,7 @@
 	${msg}
 
 	<fm:form action="${pageContext.request.contextPath}/addPro"
-		commandName="product">
+		commandName="product"  enctype="multipart/form-data" method="post">
 
 
 
@@ -49,11 +49,41 @@
 				<td><fm:input path="productname" /></td>
 			</tr>
 
+			
 			<tr>
-				<td>Product City :</td>
-				<td><fm:input path="productcity" /></td>
+				<td>Product Decription :</td>
+				<td><fm:input path="productdescription" /></td>
 			</tr>
 
+			
+			<tr>
+				<td>File upload :</td>
+				<td><fm:input type="file" path="image" /></td>
+			</tr>
+		
+		<tr>
+		    <td>Supplier Id :</td>
+		    <td>
+		        <select name="supplierId">
+					<p:forEach items="${supplierList}" var="yup">
+						<option value="${yup.supplierId}">${yup.supplierId}</option>
+					</p:forEach>
+			    </select>
+			</td>
+		</tr>
+		
+		
+		<tr>
+		   <td> Category Id :</td>
+		   <td>
+		      <select name="categoryId">
+		         <p:forEach items="${categoryList}" var="category">
+		            <option value="${category.categoryId}">${category.categoryId}</option>
+		         </p:forEach>
+		      </select>
+		   </td>
+		</tr>
+			
 		
 			<p:if test="${empty product.productname }">
                 
@@ -90,6 +120,7 @@
 					<th>Product City</th>
 					<th>Change</th>
 					<th>Delete</th>
+                    <th>Image</th>
 				</tr>
 			</thead>
 
@@ -100,18 +131,30 @@
 
 					<tr>
 						<td>${sup.productname}</td>
-						<td>${sup.productcity}</td>
+						<td>${sup.productdescription}</td>
 						<td><a href="updateProduct/${sup.productId}">Update</a></td>
 						<td><a href="deleteProduct/${sup.productId}">Delete</a></td>
+						<td><img alt="${sup.productname}" src="resources/images/${sup.productId}.jpg" width="20" height="25"></td>
 					</tr>
 
-				</p:forEach>
+
+                </p:forEach>
+			
 			</tbody>
 
 
 		</table>
 
 	</p:if>
+	
+	<%-- <table>
+	<p:forEach var="product" items="${productList}">
+	
+	<img alt="${product.productname}" src="resources/images/${product.productId}.jpg">
+	
+	</p:forEach>
+	
+	</table> --%>
 
 </body>
 </html>

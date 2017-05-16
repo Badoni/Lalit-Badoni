@@ -24,66 +24,117 @@
 	<style>
 	
 	
-	.table
+.table
 	{
     border: 1px solid black;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-right: 6px;
+    margin-right: 60px;
     margin-left: 8px;
-  
+    }
+    
+.container
+{
+width: 450px;
+height: 350px;
+text-align: center;
+background-color: rgba(240,248,255, 0.4);
+border-radius: 4px;
+margin: 0 auto;
+margin-top: 60px;
 }
-	
+
+
+.container input
+{
+height: 40px;
+width: 250px;
+font-size: 18px;
+margin-bottom: 10px;
+margin-top: 40px;
+padding-left: 20px;	
+padding-right: 60px;
+}
+
+.container label
+{
+font-size: 18px;	
+margin-top: 45px;
+}
+
+.container button 
+{
+margin-top: 10px;
+}
+
+h2 
+{
+margin-left: 100px;	
+}
+
+h5 
+{
+margin-top: 15px;	
+}
+
+
 	</style>
 	<title>Category</title>
 </head>
 <body>
 
 	${msg}
-
+	
+	<h2> Enter The Product Category Name And Category Description.  </h2>
+	 <h5> Automatically category name save as in category id. </h5>
+	 
+<div class="container">
 	<fm:form action="${pageContext.request.contextPath}/addCat" commandName="Category">
 
-		
-		<table align="center">
-		
-		<tr>
-		<c:if test="${not empty Category.categoryname }">
-        <td>Catgeory Id :</td><td><fm:input path="categoryId" disabled="true" readonly="true" /></td>
-		<fm:hidden path="categoryId" />
-		</c:if>
-		</tr>
-		
-			<tr>
-				<td>Category Name :</td>
-				<td><fm:input path="categoryname"/></td>
-			</tr>
+		<div class="row">
+		    <div class="form-group">
+		    <c:if test="${not empty Category.categoryname }">
+            <label class="control-label col-sm-3" > Id :</label>
+		    <div class="col-sm-9">
+            <fm:input path="categoryId" disabled="true" readonly="true" />
+            <fm:hidden path="categoryId" />
+		    </div>
+            </c:if>
+	        </div>
+        </div>
+        
+		<div class="row">
+			<div class="form-group">
+			<label class="control-label col-sm-3" > Name :</label>
+			<div class="col-sm-9">
+		    <fm:input path="categoryname" placeholder="Enter Name"/>
+			</div>
+            </div>
+            </div>
 
-            <tr>
-				<td>Category Description :</td>
-				<td><fm:input path="categorydescription" /><br>
-				<td>
-			</tr>
-		
-			<c:if test="${empty Category.categoryname }">
+<div class="row">
+            <div class="form-group"><br>
+			<label class="control-label col-sm-3"  > Description :</label>
+			<div class="col-sm-9">
+		    <fm:input path="categorydescription" placeholder="Enter Description"/>
+		    </div>
+		    </div>
+</div>			
 			
-				<tr>
-						<td><input type="submit" value="Add" /></td>
-				</tr>
-		   
+
+			<c:if test="${empty Category.categoryname }">
+			<button type="button" class="btn btn-success" value="Add">Submit</button>
 		    </c:if>
 		
-		<tr>
-          <c:if test="${not empty Category.categoryname }">
-	      
-	        <td><input type="submit" value="Update" /></td>
-		  
-		  </c:if>
-        </tr>
-
-</table>
+            
+            <c:if test="${not empty Category.categoryname }">
+            <button type="button" class="btn btn-primary" value="Update">Update Category</button>
+	        <h5><font color="#663300"> You can change only catgeory name or description. </font></h5>
+	        </c:if>
+        
 
 	</fm:form>
-	
+</div>	
 
 	<c:if test="${not empty categoryList}">
 

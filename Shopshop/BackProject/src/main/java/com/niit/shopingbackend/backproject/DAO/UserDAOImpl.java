@@ -8,6 +8,8 @@ import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.shopingbackend.backproject.model.Authorization;
 import com.niit.shopingbackend.backproject.model.User;
 
 @Repository("userDAO")
@@ -17,17 +19,22 @@ public class UserDAOImpl implements UserDAO
 {
 	
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 	
     
 	
 	public boolean addUser(User u)
 	{
-		Session ss=sessionFactory.getCurrentSession();
+		Session session=sessionFactory.getCurrentSession();
 		u.setUserid(u.getUsername());
 		try
 		{
-			ss.persist(u);
+			Authorization auth=new Authorization();
+			auth.setUsername(u.getUserid());
+			auth.setRole("ROLE_USER");
+			u.setActive(true);
+			session.persist(u);
+			session.persist(auth);
 			return true;
 		}
 		catch (Exception e)

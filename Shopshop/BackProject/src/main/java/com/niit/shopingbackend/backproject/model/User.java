@@ -14,6 +14,9 @@ public class User {
 	@Column(unique=true)
 	private String username;
 	private String address;
+
+	boolean active;
+
 	
 	public String getUserid() {
 		return userid;
@@ -33,4 +36,12 @@ public class User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+	
+	
 }

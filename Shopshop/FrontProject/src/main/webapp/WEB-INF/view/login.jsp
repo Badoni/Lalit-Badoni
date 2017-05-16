@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="fm"%>
+        
     <%@ include file="Header.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -51,7 +53,7 @@ padding-right: 60px;
 {
 font-size: 35px;
 color: #778899;
-margin-top: -30px;
+margin-top: -22px;
 }
 
 .container button 
@@ -72,12 +74,12 @@ margin-right: 30px;
 
 <div class="container">
 <img alt="error" src="resources/images/login/image1.png">
-  <form class="form-horizontal" action="/action_page.php">
+  <fm:form class="form-horizontal" action="">
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="username"><span class="glyphicon glyphicon-user"></span></label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username">
+        <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" >
       </div>
     </div>
 
@@ -87,14 +89,6 @@ margin-right: 30px;
         <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
       </div>
     </div>
-
-    <!-- <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-7">
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
-      </div>
-    </div> -->
 
     <div class="form-group">        
       <div class="col-sm-offset-4 col-sm-4">
@@ -110,7 +104,7 @@ margin-right: 30px;
     </div>
   
   
-  </form>
+  </fm:form>
 
 </div>
 
