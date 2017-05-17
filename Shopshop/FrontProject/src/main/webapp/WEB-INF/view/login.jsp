@@ -74,7 +74,7 @@ margin-right: 30px;
 
 <div class="container">
 <img alt="error" src="resources/images/login/image1.png">
-  <fm:form class="form-horizontal" action="">
+  <fm:form class="form-horizontal" action="addUser">
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="username"><span class="glyphicon glyphicon-user"></span></label>

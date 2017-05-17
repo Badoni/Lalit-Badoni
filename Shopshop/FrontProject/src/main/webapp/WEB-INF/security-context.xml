@@ -13,11 +13,11 @@
 
 		<form-login 
 		    login-page="/login"  
-		    default-target-url="/"
+		    default-target-url="/product"
 			authentication-failure-url="/login?error" 
-			username-parameter="emailId"
+			username-parameter="username"
 			password-parameter="password" 
-			login-processing-url="/login"/>
+			login-processing-url="/addUser"/>
 		<logout logout-url="/logout" delete-cookies="true"
 		 logout-success-url="/login?logout" />
 		<!-- enable csrf protection --> 
@@ -27,8 +27,8 @@
 	<authentication-manager>
 		<authentication-provider>
 			<jdbc-user-service data-source-ref="dataSource"
-				users-by-username-query="select emailid,password,Active from user where emailid=?"
-				authorities-by-username-query="select emailid,role from authorization where emailid =?" />
+				users-by-username-query="select username,password,Active from user where username=?"
+				authorities-by-username-query="select username,role from authorization where username =?" />
 		</authentication-provider>
 	</authentication-manager>
 </beans:beans>

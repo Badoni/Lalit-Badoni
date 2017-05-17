@@ -13,7 +13,7 @@ public class User {
 	private String userid;
 	@Column(unique=true)
 	private String username;
-	private String address;
+	private String password;
 
 	boolean active;
 
@@ -30,11 +30,11 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getAddress() {
-		return address;
+	public String getPassword() {
+		return password;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public boolean isActive() {
 		return active;

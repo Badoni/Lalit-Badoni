@@ -134,7 +134,7 @@ h2 {
 					<li><a href="login"><span
 							class="glyphicon glyphicon-log-in"></span><font color="#F5FFFA">
 								Login</font></a></li>
-					<li><a href="signup"><span
+					<li><a href="#"><span
 							class="glyphicon glyphicon-user"></span><font color="#F5FFFA">
 								Sign Up</font></a></li>
 				</ul>
