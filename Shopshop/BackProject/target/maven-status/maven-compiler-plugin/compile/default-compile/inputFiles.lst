@@ -10,5 +10,6 @@ D:\Join\BackProject\src\main\java\com\niit\shopingbackend\backproject\model\Prod
 D:\Join\BackProject\src\main\java\com\niit\shopingbackend\backproject\DAO\ProductDAO.java
 D:\Join\BackProject\src\main\java\com\niit\shopingbackend\backproject\model\ApplicationContextConfig.java
 D:\Join\BackProject\src\main\java\com\niit\shopingbackend\backproject\model\Supplier.java
+D:\Join\BackProject\src\main\java\com\niit\shopingbackend\backproject\model\Authorization.java
 D:\Join\BackProject\src\main\java\com\niit\shopingbackend\backproject\DAO\UserDAO.java
 D:\Join\BackProject\src\main\java\com\niit\shopingbackend\backproject\DAO\UserDAOImpl.java

@@ -1,6 +1,9 @@
- <%@ page isELIgnored="false"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 
+ <%@page isELIgnored="false"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="Header.jsp" %>
 <html>
 <head>
 
@@ -51,106 +54,6 @@ h2 {
 </head>
 
 <body style="background-color: #C0C0C0;">
-
-	<h1>
-		<font size="10"><span class="glyphicon glyphicon-gift"></span>
-			Welcome to ShopSHOP</font>
-	</h1>
-
-	<nav class="navbar navbar-inverse" style="background-color: #696969;">
-		<div class="container-fluid">
-			<div class="navbar-header">
-
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span>
-				</button>
-				<p class="navbar-brand">
-					<font size="5" color="black">ShopKaar</font> <img
-						src="resources/images/Carosel/image1.jpg" width="10" height="10">
-				</p>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="index"><font size="3.5"
-							color="#F5FFFA">Home</font></a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#"><font size="3.5"
-							color="#F5FFFA">Admin</font><span class="caret"></span></a>
-						<ul class="dropdown-menu">
-
-							<li class="active"><a href="pro"><font size="3.5"
-									color="black">Product </font></a></li>
-									
-							<li class="active"><a href="cate"><font size="4"
-									color="black">Category</font></a></li>
-									
-							<li class="active"><a href="supl"><font size="4"
-									color="black">Supplier</font></a></li>
-						
-							
-									
-									
-
-						</ul></li>
-
-<li class="dropdown">
-<a class="dropdown-toggle"
-						data-toggle="dropdown" href="#"><font size="3.5"
-							color="#F5FFFA">ProductCategory</font><span class="caret"></span></a>
-						
-						<ul class="dropdown-menu">
-
-<li class="active">
-<c:forEach items="${categoryList}" var="cat">
-<a href="ProductByCategory/${cat.categoryId}">${cat.categoryId}<font size="3.5"
-									color="black"></font></a>
-									
-									</c:forEach>
-									
-									</li>
-
-</ul>
-</li> 
-
-
-
-
-
-				</ul>
-
-
-				<form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-control"
-							placeholder="Find Your Product">
-					</div>
-					<button type="submit" class="btn btn-primary btn-md">Search</button>
-				</form>
-
-
-
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login"><span
-							class="glyphicon glyphicon-log-in"></span><font color="#F5FFFA">
-								Login</font></a></li>
-					<li><a href="#"><span
-							class="glyphicon glyphicon-user"></span><font color="#F5FFFA">
-								Sign Up</font></a></li>
-				</ul>
-
-
-
-			</div>
-		</div>
-	</nav>
-	<br>
-	<br>
-	<br>
-	<br>
-
-
-
 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -211,15 +114,7 @@ h2 {
 			</div>
 		</div>
 
-		<!-- Left and right controls -->
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left"></span> <span
-			class="sr-only"><font color="Black">Previous</font></span>
-		</a> <a class="right carousel-control" href="#myCarousel"
-			data-slide="next"> <span
-			class="glyphicon glyphicon-chevron-right"></span> <span
-			class="sr-only"><font color="Black">Next</font></span>
-		</a>
+		
 	</div>
 	
 

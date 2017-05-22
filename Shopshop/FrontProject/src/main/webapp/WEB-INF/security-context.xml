@@ -7,17 +7,17 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security.xsd">
 	<http auto-config="true">
-	 <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
+	 <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')"/>
 	 <intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
 	
 
 		<form-login 
 		    login-page="/login"  
-		    default-target-url="/product"
+		    default-target-url="/"
 			authentication-failure-url="/login?error" 
 			username-parameter="username"
 			password-parameter="password" 
-			login-processing-url="/addUser"/>
+			login-processing-url="/login"/>
 		<logout logout-url="/logout" delete-cookies="true"
 		 logout-success-url="/login?logout" />
 		<!-- enable csrf protection --> 

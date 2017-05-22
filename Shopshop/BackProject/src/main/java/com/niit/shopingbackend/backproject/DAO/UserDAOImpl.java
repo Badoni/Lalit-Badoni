@@ -14,7 +14,6 @@ import com.niit.shopingbackend.backproject.model.User;
 
 @Repository("userDAO")
 @Transactional
-
 public class UserDAOImpl implements UserDAO
 {
 	
@@ -26,7 +25,7 @@ public class UserDAOImpl implements UserDAO
 	public boolean addUser(User u)
 	{
 		Session session=sessionFactory.getCurrentSession();
-		u.setUserid(u.getUsername());
+		
 		try
 		{
 			Authorization auth=new Authorization();
@@ -35,6 +34,7 @@ public class UserDAOImpl implements UserDAO
 			u.setActive(true);
 			session.persist(u);
 			session.persist(auth);
+
 			return true;
 		}
 		catch (Exception e)

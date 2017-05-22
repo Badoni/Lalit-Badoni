@@ -8,7 +8,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
 
 body 
@@ -66,6 +71,8 @@ margin-top: -20px;
 {
 margin-right: 30px;	
 }
+
+
 </style>
 <title>Login</title>
 </head>
@@ -74,7 +81,7 @@ margin-right: 30px;
 
 <div class="container">
 <img alt="error" src="resources/images/login/image1.png">
-  <fm:form class="form-horizontal" action="addUser">
+  <fm:form class="form-horizontal" action="login">
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="username"><span class="glyphicon glyphicon-user"></span></label>

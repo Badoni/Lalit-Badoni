@@ -61,6 +61,19 @@
 				<td><fm:input type="file" path="image" /></td>
 			</tr>
 		
+		
+		<tr>
+		   <td> Category Id :</td>
+		   <td>
+		      <select name="categoryId">
+		         <p:forEach items="${categoryList}" var="catee">
+		            <option value="${catee.categoryId}">${catee.categoryId}</option>
+		         </p:forEach>
+		      </select>
+		   </td>
+		</tr>
+		
+		
 		<tr>
 		    <td>Supplier Id :</td>
 		    <td>
@@ -73,16 +86,7 @@
 		</tr>
 		
 		
-		<tr>
-		   <td> Category Id :</td>
-		   <td>
-		      <select name="categoryId">
-		         <p:forEach items="${categoryList}" var="category">
-		            <option value="${category.categoryId}">${category.categoryId}</option>
-		         </p:forEach>
-		      </select>
-		   </td>
-		</tr>
+		
 			
 		
 			<p:if test="${empty product.productname }">

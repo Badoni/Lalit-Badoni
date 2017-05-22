@@ -25,6 +25,12 @@ CategoryDAO categoryDAO;
 	}
 	
 	
+	@RequestMapping("/login")
+	public String log()
+	{
+		return "Login";
+	}
+	
 	
 
 	

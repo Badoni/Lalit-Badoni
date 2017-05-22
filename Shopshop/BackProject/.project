@@ -3,6 +3,7 @@
 	<name>BackProject</name>
 	<comment></comment>
 	<projects>
+		<project>FrontProject</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

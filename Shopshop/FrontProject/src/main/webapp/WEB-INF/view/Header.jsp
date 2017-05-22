@@ -2,6 +2,8 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="security"%>
 
 <!-- <link href="resources/css/logintest.css" rel="stylesheet"
 type="text/css">
@@ -65,24 +67,6 @@ type="text/css">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index"><font size="3.5"
 							color="#F5FFFA">Home</font></a></li>
-					<li class="dropdown"><a class="dropdown-toggle"
-						data-toggle="dropdown" href="#"><font size="3.5"
-							color="#F5FFFA">Admin</font><span class="caret"></span></a>
-						<ul class="dropdown-menu">
-
-							<li class="active"><a href="pro"><font size="3.5"
-									color="black">Product </font></a></li>
-
-							<li class="active"><a href="cate"><font size="4"
-									color="black">Category</font></a></li>
-
-							<li class="active"><a href="supl"><font size="4"
-									color="black">Supplier</font></a></li>
-
-							<li class="active"><a href="head"><font size="4"
-									color="black">Header</font></a></li>
-
-						</ul></li>
 
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#"><font size="3.5"
@@ -92,7 +76,7 @@ type="text/css">
 
 							<li class="active"><c:forEach items="${categoryList}"
 									var="cat">
-									<a href="ProductByCategory/${cat.categoryId}">${cat.categoryId}><font
+									<a href="ProductByCategory/${cat.categoryId}">${cat.categoryId}<font
 										size="3.5" color="black"></font></a>
 
 								</c:forEach></li>
@@ -106,24 +90,40 @@ type="text/css">
 				</ul>
 
 
-				<form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-control"
-							placeholder="Find Your Product">
-					</div>
-					<button type="submit" class="btn btn-primary btn-md">Search</button>
-				</form>
-
-
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login"><span
-							class="glyphicon glyphicon-log-in"></span><font color="#F5FFFA">
-								Login</font></a></li>
-					<li><a href="signup"><span
-							class="glyphicon glyphicon-user"></span><font color="#F5FFFA">
-								Sign Up</font></a></li>
+					<security:authorize var="loggedIn" access="isAuthenticated()">
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+						</security:authorize>
+						<security:authorize access="hasRole('ROLE_USER')">
+						</security:authorize>
+					</security:authorize>
+
+
+
+					<security:authorize access="hasRole('ROLE_USER')">
+						<li><a href="${pageContext.request.contextPath}/user/cart"><span
+								class="glyphicon glyphicon-shopping-cart"></span>CART</a></li>
+					</security:authorize>
+					<security:authorize access="hasRole('ROLE_ADMIN')">
+						<li><a
+							href="${pageContext.request.contextPath}/admin"><span
+								class="glyphicon glyphicon-user"></span>ADMIN</a></li>
+					</security:authorize>
+					<security:authorize access="isAuthenticated()">
+						<li style="color: red"><br>Welcome <i>${pageContext.request.userPrincipal.name}</i></li>
+						<li><a href="javascript:formSubmit()">Logout</a></li>
+					</security:authorize>
+					<security:authorize access="isAnonymous()">
+						<li><a href="${pageContext.request.contextPath}/login"><span
+								class="glyphicon glyphicon-log-in"></span><font color="#F5FFFA">
+									Log In</font></a></li>
+						<li><a href="${pageContext.request.contextPath}/signup"><span
+								class="glyphicon glyphicon-user"></span><font color="#F5FFFA">
+									Sign Up</font></a></li>
+					</security:authorize>
 				</ul>
+
 
 
 

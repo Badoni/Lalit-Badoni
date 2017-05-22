@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.niit.shopingbackend.backproject.DAO.CategoryDAO;
 import com.niit.shopingbackend.backproject.DAO.ProductDAO;
 import com.niit.shopingbackend.backproject.DAO.SupplierDAO;
 import com.niit.shopingbackend.backproject.model.Product;
@@ -33,6 +35,9 @@ public class ProductController
 	@Autowired
 	private SupplierDAO supplierDAO;
 	
+	@Autowired
+	private CategoryDAO categoryDAO;
+	
 	
 	
 	@RequestMapping("/pro")
@@ -41,7 +46,7 @@ public class ProductController
 		model.addAttribute("productList", productDAO.getAllProduct());
 		model.addAttribute("product", new Product());
 		httpSession.setAttribute("supplierList",supplierDAO.getAllSupplier());
-		
+		httpSession.setAttribute("categoryList",categoryDAO.getAllCategory());
 		return "product";
 
 	}

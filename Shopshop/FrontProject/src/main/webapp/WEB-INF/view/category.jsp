@@ -123,12 +123,12 @@ margin-top: 15px;
 			
 
 			<c:if test="${empty Category.categoryname }">
-			<button type="button" class="btn btn-success" value="Add">Submit</button>
+			<button type="submit" class="btn btn-success" value="Add">Submit</button>
 		    </c:if>
 		
             
             <c:if test="${not empty Category.categoryname }">
-            <button type="button" class="btn btn-primary" value="Update">Update Category</button>
+            <button type="submit" class="btn btn-primary" value="Update">Update Category</button>
 	        <h5><font color="#663300"> You can change only catgeory name or description. </font></h5>
 	        </c:if>
         

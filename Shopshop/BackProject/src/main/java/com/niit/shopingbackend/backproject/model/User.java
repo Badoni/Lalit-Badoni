@@ -2,15 +2,22 @@ package com.niit.shopingbackend.backproject.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.stereotype.Component;
 
 
+@Component
 @Entity
-public class User {
+public class User 
+{
+	
 	
 	@Id
 	private String userid;
+	
 	@Column(unique=true)
 	private String username;
 	private String password;
@@ -42,6 +49,6 @@ public class User {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
+
 	
 }
