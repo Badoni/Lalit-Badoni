@@ -25,8 +25,8 @@
 
 		<dependency>
 			<groupId>com.niit.shopingbackend</groupId>
-			<artifactId>BackProject</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+	<artifactId>BackProject</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->

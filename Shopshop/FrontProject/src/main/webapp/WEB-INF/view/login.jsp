@@ -78,6 +78,7 @@ margin-right: 30px;
 </head>
 <body>
 
+${msg}
 
 <div class="container">
 <img alt="error" src="resources/images/login/image1.png">

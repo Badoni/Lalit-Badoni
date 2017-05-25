@@ -4,7 +4,7 @@
     <%@ page isELIgnored="false"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="fm"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="p"%>
-
+<%@ include file="Header.jsp" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -18,6 +18,60 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<style type="text/css">
+.table
+	{
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 60px;
+    margin-left: 8px;
+    }
+
+.container
+{
+width: 450px;
+height: 350px;
+text-align: center;
+background-color: rgba(240,248,255, 0.4);
+border-radius: 4px;
+margin: 0 auto;
+margin-top: 60px;
+}
+    
+.container input
+{
+height: 40px;
+width: 250px;
+font-size: 18px;
+margin-bottom: 10px;
+margin-top: 40px;
+padding-left: 20px;	
+padding-right: 60px;
+}
+
+.container label
+{
+font-size: 18px;	
+margin-top: 45px;
+}
+
+.container button 
+{
+margin-top: 10px;
+}
+
+h2 
+{
+margin-left: 100px;	
+}
+
+h5 
+{
+margin-top: 15px;	
+}
+    
+</style>
 
 <title>Product</title>
 </head>
@@ -27,86 +81,86 @@
 
 	${msg}
 
+<div class="container">
 	<fm:form action="${pageContext.request.contextPath}/addPro"
 		commandName="product"  enctype="multipart/form-data" method="post">
 
 
 
-		<table align="center">
-
-			<tr>
-				<p:if test="${not empty product.productname }">
-					<td>Product Id :</td>
-					<td><fm:input path="productId" disabled="true"
-							readonly="true" /></td>
+	    <div class="row">
+		        <div class="form-group">
+			<p:if test="${not empty product.productname }">
+				<label class="control-label col-sm-3" >	Product Id : </label>
+				<div class="col-sm-9">
+					<fm:input path="productId" disabled="true" readonly="true" />
 					<fm:hidden path="productId" />
+			    </div>
 			    </p:if>
-			</tr>
+			     </div>
+			    </div>
 			
 
-			<tr>
-				<td>Product Name :</td>
-				<td><fm:input path="productname" /></td>
-			</tr>
+			
+				<div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Product Name : </label>
+				<div class="col-sm-9">
+				<fm:input path="productname" />
+</div></div></div>
 
 			
-			<tr>
-				<td>Product Decription :</td>
-				<td><fm:input path="productdescription" /></td>
-			</tr>
-
+				<div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Product Decription : </label>
+				<div class="col-sm-9">
+				<fm:input path="productdescription" />
+</div></div></div>
 			
-			<tr>
-				<td>File upload :</td>
-				<td><fm:input type="file" path="image" /></td>
-			</tr>
+			
+				<div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >File upload : </label>
+				<fm:input type="file" path="image" />
+		</div></div>
 		
 		
-		<tr>
-		   <td> Category Id :</td>
-		   <td>
+		    <div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Category Id : </label>
 		      <select name="categoryId">
 		         <p:forEach items="${categoryList}" var="catee">
 		            <option value="${catee.categoryId}">${catee.categoryId}</option>
 		         </p:forEach>
 		      </select>
-		   </td>
-		</tr>
+		</div></div>
 		
-		
-		<tr>
-		    <td>Supplier Id :</td>
-		    <td>
+		    
+		    
+		    <div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Supplier Id : </label>
 		        <select name="supplierId">
 					<p:forEach items="${supplierList}" var="yup">
 						<option value="${yup.supplierId}">${yup.supplierId}</option>
 					</p:forEach>
 			    </select>
-			</td>
-		</tr>
-		
+		</div></div>
 		
 		
 			
 		
 			<p:if test="${empty product.productname }">
-                
-                <tr>
-					<td><input type="submit" value="Add" /></td>
-				</tr>
-				
+        			<button type="submit" class="btn btn-success" value="Add"> Submit </button> 
 			</p:if>
 
-			<tr>
 				<p:if test="${not empty product.productname }">
-					<td><input type="submit" value="Update" /></td>
+					<button type="submit" class="btn btn-primary" value="Update">Update Category</button>
+			   <h5><font color="#663300"> You Can Change Only Product Name Or City. </font></h5>
 			    </p:if>
-			</tr>
 			
-		</table>
 
 	</fm:form>
-
+</div>
 
 	<p:if test="${not empty productList}">
 

@@ -19,6 +19,60 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<style type="text/css">
+.table
+	{
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 60px;
+    margin-left: 8px;
+    }
+
+.container
+{
+width: 450px;
+height: 350px;
+text-align: center;
+background-color: rgba(240,248,255, 0.4);
+border-radius: 4px;
+margin: 0 auto;
+margin-top: 60px;
+}
+    
+.container input
+{
+height: 40px;
+width: 250px;
+font-size: 18px;
+margin-bottom: 10px;
+margin-top: 40px;
+padding-left: 20px;	
+padding-right: 60px;
+}
+
+.container label
+{
+font-size: 18px;	
+margin-top: 45px;
+}
+
+.container button 
+{
+margin-top: 10px;
+}
+
+h2 
+{
+margin-left: 100px;	
+}
+
+h5 
+{
+margin-top: 15px;	
+}
+    
+</style>
 
 </head>
 
@@ -29,52 +83,58 @@
 
 	${msg}
 
+<div class="container">
 	<fm:form action="${pageContext.request.contextPath}/addSup"
 		commandName="supplier">
 
 
 
-		<table align="center">
 
-			<tr>
+			    <div class="row">
+		        <div class="form-group">
 				<s:if test="${not empty supplier.suppliername }">
-					<td>Supplier Id :</td>
-					<td><fm:input path="supplierId" disabled="true"
-							readonly="true" /></td>
-					<fm:hidden path="supplierId" />
+				<label class="control-label col-sm-3" > Supplier Id : </label>
+				<div class="col-sm-9">
+				<fm:input path="supplierId" disabled="true"	readonly="true" />
+				<fm:hidden path="supplierId" />
+			    </div>
 			    </s:if>
-			</tr>
-			
+			    </div>
+			    </div>
 
-			<tr>
-				<td>Supplier Name :</td>
-				<td><fm:input path="suppliername" /></td>
-			</tr>
-
-			<tr>
-				<td>Supplier City :</td>
-				<td><fm:input path="suppliercity" /></td>
-			</tr>
-
-		
-			<s:if test="${empty supplier.suppliername }">
                 
-                <tr>
-					<td><input type="submit" value="Add" /></td>
-				</tr>
-				
-			</s:if>
+                
+                <div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Supplier Name : </label>
+				<div class="col-sm-9">
+				<fm:input path="suppliername" placeholder="Enter Name"/>
+                </div>
+                </div>
+                </div>
 
-			<tr>
+				
+				
+				<div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Supplier City : </label>
+				<div class="col-sm-9">
+				<fm:input path="suppliercity" placeholder="Enter City"/>
+				</div>
+                </div>
+                </div>
+		
+				<s:if test="${empty supplier.suppliername }">
+  				<button type="submit" class="btn btn-success" value="Add"> Submit </button>
+				</s:if>
+
 				<s:if test="${not empty supplier.suppliername }">
-					<td><input type="submit" value="Update" /></td>
+				<button type="submit" class="btn btn-primary" value="Update" >Update Category</button>
+				<h5><font color="#663300"> You Can Change Only Supplier Name Or City. </font></h5>
 			    </s:if>
-			</tr>
-			
-		</table>
 
 	</fm:form>
-
+</div>
 
 	<s:if test="${not empty supplierList}">
 

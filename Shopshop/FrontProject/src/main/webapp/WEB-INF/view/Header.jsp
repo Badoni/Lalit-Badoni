@@ -59,8 +59,7 @@ type="text/css">
 					<span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
 				<p class="navbar-brand">
-					<font size="5" color="black">ShopKaar</font> <img
-						src="resources/images/Carosel/image1.jpg" width="10" height="10">
+					<font size="5" color="black">ShopKaar</font> 
 				</p>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
@@ -112,7 +111,7 @@ type="text/css">
 					</security:authorize>
 					<security:authorize access="isAuthenticated()">
 						<li style="color: red"><br>Welcome <i>${pageContext.request.userPrincipal.name}</i></li>
-						<li><a href="javascript:formSubmit()">Logout</a></li>
+						<li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
 					</security:authorize>
 					<security:authorize access="isAnonymous()">
 						<li><a href="${pageContext.request.contextPath}/login"><span
