@@ -14,6 +14,7 @@ public class Authorization
 	int role_id;
 	String username;
 	String role;
+	
 	public int getRole_id() {
 		return role_id;
 	}

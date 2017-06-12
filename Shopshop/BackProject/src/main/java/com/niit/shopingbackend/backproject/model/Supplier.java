@@ -1,6 +1,9 @@
 package com.niit.shopingbackend.backproject.model;
 
+import java.io.Serializable;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,11 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Supplier
+public class Supplier implements Serializable
 {
+	
+	private static final long serialVersionUID = -3692513996115183800L;
+	
 	@Id
 	private String supplierId;
-	@OneToMany(mappedBy="supplierId",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="supplierId",fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private Set<Product>product;
 	
 	

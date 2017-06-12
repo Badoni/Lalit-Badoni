@@ -15,12 +15,18 @@ public interface ProductDAO
 
 	public boolean update(Product p);
 	
-	public boolean deletePro(String id);
+	public boolean deletePro(int id);
 	
-	public Product getProductId(String id);
+	public Product getProductId(int id);
 	
 	List<Product> getProductByCategory(String categoryId);
 	
+	public Product getProductByName(String name); // get() product by name
+
+	public List<Product> viewByStatus(String status);
+
+
+	public Product getProductByID(int id); 
 
 	
 }

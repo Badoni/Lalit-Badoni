@@ -49,8 +49,8 @@ type="text/css">
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
-<body style="background-color: #C0C0C0;">
-	<nav class="navbar navbar-inverse" style="background-color: #696969;">
+<body>
+	<nav class="navbar" style="background-color:79d4ff;">
 		<div class="container-fluid">
 			<div class="navbar-header">
 
@@ -58,18 +58,16 @@ type="text/css">
 					data-target="#myNavbar">
 					<span class="icon-bar"></span> <span class="icon-bar"></span>
 				</button>
-				<p class="navbar-brand">
-					<font size="5" color="black">ShopKaar</font> 
+				<p class="navbar navbar-brand">
+					<a href="index"><font size="10" color="black">Shopshop</font></a> 
 				</p>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index"><font size="3.5"
-							color="#F5FFFA">Home</font></a></li>
-
+					
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#"><font size="3.5"
-							color="#F5FFFA">ProductCategory</font><span class="caret"></span></a>
+							color="black">SHOP BY<br>category</font><span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
 
@@ -101,7 +99,7 @@ type="text/css">
 
 
 					<security:authorize access="hasRole('ROLE_USER')">
-						<li><a href="${pageContext.request.contextPath}/user/cart"><span
+						<li><a href="myCart"><span
 								class="glyphicon glyphicon-shopping-cart"></span>CART</a></li>
 					</security:authorize>
 					<security:authorize access="hasRole('ROLE_ADMIN')">
@@ -110,15 +108,15 @@ type="text/css">
 								class="glyphicon glyphicon-user"></span>ADMIN</a></li>
 					</security:authorize>
 					<security:authorize access="isAuthenticated()">
-						<li style="color: red"><br>Welcome <i>${pageContext.request.userPrincipal.name}</i></li>
+					<li style="color: maroon"><br><font size="3.5">Welcome <i>${pageContext.request.userPrincipal.name}</i></font></li>
 						<li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
 					</security:authorize>
 					<security:authorize access="isAnonymous()">
 						<li><a href="${pageContext.request.contextPath}/login"><span
-								class="glyphicon glyphicon-log-in"></span><font color="#F5FFFA">
+								class="glyphicon glyphicon-log-in"></span><font size="3.5" color="black">
 									Log In</font></a></li>
 						<li><a href="${pageContext.request.contextPath}/signup"><span
-								class="glyphicon glyphicon-user"></span><font color="#F5FFFA">
+								class="glyphicon glyphicon-user"></span><font size="3.5" color="black">
 									Sign Up</font></a></li>
 					</security:authorize>
 				</ul>

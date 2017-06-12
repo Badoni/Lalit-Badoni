@@ -1,8 +1,9 @@
 package com.niit.shopingbackend.backproject.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,14 +12,15 @@ import javax.persistence.OneToMany;
 import org.springframework.stereotype.Component;
 
 
-@Component
 @Entity
-public class Category
+@Component
+public class Category implements Serializable
 {
+	private static final long serialVersionUID = -3692513996115183800L;
 
 	@Id
 	private String categoryId;
-	@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="category",fetch=FetchType.EAGER,cascade=CascadeType.REMOVE)
 	private Set<Product>product;
 	
 	@Column(unique=true)

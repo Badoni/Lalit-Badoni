@@ -55,7 +55,7 @@ public class ProductController
 	@RequestMapping("/addPro")
 	public String Product(@ModelAttribute("product") Product p, Model model) {
 
-		if (p.getProductId() == null || p.getProductId().isEmpty()) {
+		if (p.getProductId() == 0) {
 			
 			if (productDAO.addPro(p)) {
 				model.addAttribute("msg", "Data SAVE in Database");
@@ -87,7 +87,7 @@ public class ProductController
 	}
 	
 	@RequestMapping("/updateProduct/{productId}")
-	public String editProduct(@PathVariable("productId") String productId, Model model)
+	public String editProduct(@PathVariable("productId") int productId, Model model)
 	{
 		model.addAttribute("product", productDAO.getProductId(productId));
 		model.addAttribute("productList", productDAO.getAllProduct());
@@ -96,7 +96,7 @@ public class ProductController
 	
 	
 	@RequestMapping("/deleteProduct/{productId}")
-	public String deleteProduct(@PathVariable("productId") String productId, Model model) 
+	public String deleteProduct(@PathVariable("productId") int productId, Model model) 
 	{
 		productDAO.deletePro(productId);
 		return "redirect:/pro";
@@ -116,7 +116,7 @@ public class ProductController
 	
 	
 	@RequestMapping("/More/{productId}")
-	public String getdetail(@PathVariable("productId") String id, Model model)
+	public String getdetail(@PathVariable("productId") int id, Model model)
 	{
 		System.out.println(" Check Controller ");
 		model.addAttribute("productData",productDAO.getProductId(id));

@@ -38,20 +38,20 @@ body {
 </head>
 <body>
 
-<%-- 	${msg}
- --%>
+ 	${msg}
+ 
 	<div class="container">
 		<fm:form action="${pageContext.request.contextPath}/addUser" commandName="user">
 
 
-			<div class="form-group">
+  			<div class="form-group">
 				<label class="control-label col-sm-2" for="userid"></label>
 				<div class="col-sm-7">
 					<input type="text" class="form-control" id="userid"
 						placeholder="Enter Userid" name="userid">
 				</div>
 			</div>
-
+ 
 
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="username"></label>

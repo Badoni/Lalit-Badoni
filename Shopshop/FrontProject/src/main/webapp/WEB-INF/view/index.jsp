@@ -4,6 +4,8 @@
  <%@page isELIgnored="false"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="Header.jsp" %>
+
+
 <html>
 <head>
 
@@ -18,112 +20,118 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<style>
-h1 {
-	border: 0px cadetblue;
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	color: white;
-	text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-	font: right;
-}
 
-h2 {
-	border: 0px cadetblue;
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	color: gray;
-	text-shadow: 1px 1px 2px black, 0 0 25px black, 0 0 5px white;
-}
 
-  .carousel-inner img {
-      width: 80%; 
+  <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
       margin: auto;
-      height: 80%;
   }
+  </style>
 
-
-
-</style>
-
-
+<title>Shopshop</title>
 </head>
 
-<body style="background-color: #C0C0C0;">
+<body>
 
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1"></li>
-			<li data-target="#myCarousel" data-slide-to="2"></li>
-			<li data-target="#myCarousel" data-slide-to="3"></li>
-			<li data-target="#myCarousel" data-slide-to="4"></li>
-		</ol>
+<div class="container-fluid">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
 
-		<!-- Wrapper for slides -->
-		<div class="carousel-inner">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+         <img src="resources/images/Carosel/CaroselLaptop.jpg" alt="..." width="460" height="345">
+      </div>
 
-			<div class="item active">
-				<img src="resources/images/Carosel/image1.jpg" alt="Image1"
-					width="1000" height="300">
-				<div class="carousel-caption">
-					<h3>Image 1</h3>
-					<p>Nyc Look</p>
-				</div>
-			</div>
+      <div class="item">
+         <img src="resources/images/Carosel/Headphone.jpg" alt="..." width="460" height="345">
+      </div>
+    
+      <div class="item">
+         <img src="resources/images/Carosel/Samsung.jpg" alt="..." width="460" height="345">
+      </div>
 
-			<div class="item">
-				<img src="resources/images/Carosel/image2.jpg" alt="Image2"
-					width="1000" height="300">
-				<div class="carousel-caption">
-					<h3>Image2</h3>
-					<p>Look Image</p>
-				</div>
-			</div>
+      <div class="item">
+         <img src="resources/images/Carosel/CaroselLaptop2.jpg" alt="..." width="460" height="345">
+      </div>
+      
+      <div class="item">
+         <img src="resources/images/Carosel/phones.jpg" alt="..." width="460" height="345">
+      </div>
+      
+    </div>
 
-			<div class="item">
-				<img src="resources/images/Carosel/image3.jpg" alt="Image3"
-					width="1000" height="300">
-				<div class="carousel-caption">
-					<h3>Image3</h3>
-					<p>Look Image</p>
-				</div>
-			</div>
-
-			<div class="item">
-				<img src="resources/images/Carosel/image4.jpg" alt="Image3"
-					width="1000" height="300">
-				<div class="carousel-caption">
-					<h3>Image4</h3>
-					<p>Look Image</p>
-				</div>
-			</div>
-
-			<div class="item">
-				<img src="resources/images/Carosel/image5.jpg" alt="Image3"
-					width="1000" height="300">
-				<div class="carousel-caption">
-					<h3>Image5</h3>
-					<p>Look Photo</p>
-				</div>
-			</div>
-		</div>
-
-		
-	</div>
-	
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
 
 
-	<h2>
-		<font size="10">its my first Demo Page,not first
-			but at least not last </font> <span
-			class="glyphicon glyphicon-copyright-mark"> Copyright</span>
-	</h2>
+
+
+
+
+
+
+
+
+
+
+ 
+
+<div class="container-fluid" align="center">
+ <div class="row grid-divider">
+    
+    <div class="col-sm-4">
+      <div class="col-padding">
+        <h3>Laptop</h3>
+        <img src="resources/images/Carosel/Laptop 1.jpg" alt="Dell Laptop" style="width:100px;height:100px;">
+        <p>Dell Laptop</p>
+      </div>
+    </div>
+    
+    <div class="col-sm-4">
+    <div class="col-padding">
+        <h3>Data Storage</h3>
+        <img src="resources/images/Carosel/PenDrive2.jpg" alt="SanDisk PenDrive" style="width:100px;height:100px;">
+        <p>SanDisk, 16GB USB 2.0 Pen Drive</p>
+      </div>
+    </div>
+    
+    <div class="col-sm-4">
+    <div class="col-padding">
+        <h3>Phone</h3>
+        <img src="resources/images/Carosel/Redmi.jpg" alt="Redmi" style="width:50px;height:100px;">
+        <p>Redmi 4A (Gold, 16GB)</p>
+      </div>
+    </div>
+    </div>
+
+    
+
+</div>
+
+                     
+
+
 
 </body>
 </html>
+<%@ include file="Footer.jsp" %>
