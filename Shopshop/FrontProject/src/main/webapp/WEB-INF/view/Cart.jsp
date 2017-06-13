@@ -36,7 +36,7 @@
 					<td>${cart.productName}</td>
 					<td>${cart.price}</td>
 					<td>${cart.quantity}</td>
-					<td><a href="/removeCart/${cart.id}" class="btn btn-danger">Remove</a></td>
+					<td><a href="${pageContext.request.contextPath}/removeCart/${cart.id}" class="btn btn-danger">Remove</a></td>
 				</tr>
 			</c:forEach>
 		</table>

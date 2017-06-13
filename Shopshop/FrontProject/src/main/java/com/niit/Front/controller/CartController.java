@@ -37,7 +37,7 @@ public class CartController
 	private HttpSession session;
 
 	
-	@RequestMapping("/addCart")
+	@RequestMapping("/Cart")
 	public String getCart() 
 	{
 		logger.info("Starting getCart method in CartController");
@@ -54,6 +54,7 @@ public class CartController
 	@RequestMapping(value="/addCart/{productId}" , method=RequestMethod.GET)
 	public String addToCart(@PathVariable("productId") int productId, RedirectAttributes redirect, Model model) {
 		logger.info("Starting addtocart method in CartController");
+		System.out.println("add to cart");
 		try 
 		{
 			Cart cart = new Cart();

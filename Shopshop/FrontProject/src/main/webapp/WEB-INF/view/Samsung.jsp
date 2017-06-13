@@ -55,7 +55,7 @@
 						<p class="vote"><strong>Many</strong> of buyers enjoyed this product!</p>
 						
 						<div class="action">
-						<button class="add-to-cart btn btn-default" type="submit" value="addCart" ><a href="addCart">Add toCart</a></button>
+						<a href="addCart">Add toCart</a>
 						</div>
 				</div>
 				

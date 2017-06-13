@@ -98,7 +98,7 @@ type="text/css">
 
 
 					<security:authorize access="hasRole('ROLE_USER')">
-						<li><a href="addCart"><span
+						<li><a href="Cart"><span
 								class="glyphicon glyphicon-shopping-cart"></span>CART</a></li>
 					</security:authorize>
 					<security:authorize access="hasRole('ROLE_ADMIN')">

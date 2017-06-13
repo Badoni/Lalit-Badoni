@@ -50,7 +50,7 @@ margin: auto;
 					<div class="separator clear-left">
 						<p class="btn-add">
 							<i class="fa fa-shopping-cart"></i> <a
-								class="icon-shopping-cart" href="${pageContext.request.contextPath}/addCart/${cp.productId}" 
+								class="icon-shopping-cart" href='<pc:url value="/addCart/${cp.productId}"/>'
 								class="img-responsive" alt="Product Image">Add To Cart </a>
 						</p>
 					</div>
