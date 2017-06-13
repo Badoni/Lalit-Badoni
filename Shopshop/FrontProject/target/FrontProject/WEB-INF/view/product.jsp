@@ -4,7 +4,7 @@
     <%@ page isELIgnored="false"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="fm"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="p"%>
-<%@ include file="Header.jsp" %>
+<%@include file="Header.jsp" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -27,40 +27,6 @@
     margin-right: 60px;
     margin-left: 8px;
     }
-
-
-    
-.container input
-{
-height: 40px;
-width: 250px;
-font-size: 18px;
-margin-bottom: 10px;
-margin-top: 40px;
-padding-left: 20px;	
-padding-right: 60px;
-}
-
-.container label
-{
-font-size: 18px;	
-margin-top: 45px;
-}
-
-.container button 
-{
-margin-top: 10px;
-}
-
-h2 
-{
-margin-left: 100px;	
-}
-
-h5 
-{
-margin-top: 15px;	
-}
     
 </style>
 
@@ -71,7 +37,7 @@ margin-top: 15px;
 
 
 	${msg}
-
+<table>
 <div class="container">
 	<fm:form action="${pageContext.request.contextPath}/addPro"
 		commandName="product"  enctype="multipart/form-data" method="post">
@@ -102,19 +68,33 @@ margin-top: 15px;
 			
 				<div class="row">
 		    	<div class="form-group">
-				<label class="control-label col-sm-3" >Product Decription : </label>
+				<label class="control-label col-sm-3" >Product Decription First : </label>
 				<div class="col-sm-9">
-				<fm:input path="productdescription" />
+				<fm:input path="productdescriptionfield1" />
+</div></div></div>
+
+				<div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Product Decription Second : </label>
+				<div class="col-sm-9">
+				<fm:input path="productdescriptionfield2" />
 </div></div></div>
 			
+							<div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Product Decription Third : </label>
+				<div class="col-sm-9">
+				<fm:input path="productdescriptionfield3" />
+</div></div></div>
 			
-				<label class="control-label col-sm-3" >File upload : </label>
-				<fm:input type="file" path="image" />
-		        
-		        
-		
-		
-		    <div class="row">
+		<div class="row">
+		    	<div class="form-group">
+				<label class="control-label col-sm-3" >Product Price : </label>
+				<div class="col-sm-9">
+				<fm:input path="productprice" />
+</div></div></div>
+			
+<div class="row">
 		    	<div class="form-group">
 				<label class="control-label col-sm-3" >Category Id : </label>
 		      <select name="categoryId">
@@ -136,7 +116,9 @@ margin-top: 15px;
 			    </select>
 		</div></div>
 		
-		
+	<label class="control-label col-sm-3" >File upload : </label>
+				<fm:input type="file" path="image" />
+		        		
 			
 		
 			<p:if test="${empty product.productname }">
@@ -147,7 +129,7 @@ margin-top: 15px;
 					<button type="submit" class="btn btn-primary" value="Update">Update Category</button>
 			   <h5><font color="#663300"> You Can Change Only Product Name Or City. </font></h5>
 			    </p:if>
-			
+			</table>
 
 	</fm:form>
 </div>
@@ -165,7 +147,8 @@ margin-top: 15px;
 			<thead>
 				<tr>
 					<th>Product Name</th>
-					<th>Product City</th>
+					<th>Product Description</th>
+					<th>Product Price</th>
 					<th>Change</th>
 					<th>Delete</th>
                     <th>Image</th>
@@ -179,7 +162,8 @@ margin-top: 15px;
 
 					<tr>
 						<td>${sup.productname}</td>
-						<td>${sup.productdescription}</td>
+						<td>${sup.productdescriptionfield1} </td>
+						<td>${sup.productprice}</td>
 						<td><a href="updateProduct/${sup.productId}">Update</a></td>
 						<td><a href="deleteProduct/${sup.productId}">Delete</a></td>
 						<td><img alt="${sup.productname}" src="resources/images/${sup.productId}.jpg" width="20" height="25"></td>

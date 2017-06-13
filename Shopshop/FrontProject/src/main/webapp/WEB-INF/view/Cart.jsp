@@ -36,14 +36,14 @@
 					<td>${cart.productName}</td>
 					<td>${cart.price}</td>
 					<td>${cart.quantity}</td>
-					<td><a href="<c:url value='/removeCart/${cart.id}' />"class="btn btn-danger">Remove</a></td>
+					<td><a href="/removeCart/${cart.id}" class="btn btn-danger">Remove</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 		<hr>
 		<div class="pull-right">
 			Total Amount: <em><b class="text-success">Rs ${totalAmount}</b></em>
-			&nbsp; <a href="<c:url value='${pageContext.request.contextPath}/Ord' /> "
+			&nbsp; <a href="${pageContext.request.contextPath}/Ord"
 				class="btn btn-outline-primary">Checkout</a>
 		</div>
 		<a href="<c:url value='/clearCart' />"

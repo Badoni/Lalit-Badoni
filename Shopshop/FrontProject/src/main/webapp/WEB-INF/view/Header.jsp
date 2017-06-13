@@ -2,8 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.springframework.org/security/tags"
-	prefix="security"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 
 <!-- <link href="resources/css/logintest.css" rel="stylesheet"
 type="text/css">
@@ -99,7 +98,7 @@ type="text/css">
 
 
 					<security:authorize access="hasRole('ROLE_USER')">
-						<li><a href="myCart"><span
+						<li><a href="addCart"><span
 								class="glyphicon glyphicon-shopping-cart"></span>CART</a></li>
 					</security:authorize>
 					<security:authorize access="hasRole('ROLE_ADMIN')">

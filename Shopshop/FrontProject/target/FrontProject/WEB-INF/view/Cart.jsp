@@ -1,20 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@include file="Header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+   <%@include file="Header.jsp" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	
 <title>Cart</title>
 </head>
 <body>
@@ -25,40 +16,39 @@
 	<c:if test="${not empty success }">
 		<div class="alert alert-success">${success }</div>
 	</c:if>
- 	
- 	<c:if test="${empty cartList }">
+	<c:if test="${empty cartList }">
 		<div class="alert alert-warning">You have not added any product
 			into cart.</div>
-	</c:if> 
-	
-	<c:if test="${empty cartList}">
+	</c:if>
+	<c:if test="${not empty error }">
+		<div class="alert alert-danger">${error }</div>
+	</c:if>
+	<c:if test="${not empty cartList}">
 		<table class="table table-bordered">
 			<tr>
 				<th>Product Name</th>
-				<th>Description</th>
 				<th>Price</th>
-				<th width="135">Actions</th>
+				<th>Quantity</th>
+				<th width="135">Action</th>
 			</tr>
 			<c:forEach items="${cartList}" var="cart">
 				<tr>
-				    <td>${cart.productname}</td>
-					<td>${cart.productdescription}</td>
+					<td>${cart.productName}</td>
 					<td>${cart.price}</td>
-					<td><a href="<c:url value='/myCart/deleteItem/${cart.id}' />"><i
-							class="fa fa-trash btn btn-danger btn-xs"></i></a></td>
+					<td>${cart.quantity}</td>
+					<td><a href="<c:url value='/removeCart/${cart.id}' />"class="btn btn-danger">Remove</a></td>
 				</tr>
 			</c:forEach>
 		</table>
-	</c:if>
 		<hr>
 		<div class="pull-right">
-			Total Amount: <em><b class="text-success">Rs ${totalAmount }</b></em>
-			&nbsp; <a href="<c:url value="/order" /> "
+			Total Amount: <em><b class="text-success">Rs ${totalAmount}</b></em>
+			&nbsp; <a href="<c:url value='${pageContext.request.contextPath}/Ord' /> "
 				class="btn btn-outline-primary">Checkout</a>
 		</div>
-		<a href="<c:url value="Clearcart"/>
+		<a href="<c:url value='/clearCart' />"
 			class="btn btn-outline-danger">Clear Cart</a>
-	
+	</c:if>
 </div>
 
 </body>

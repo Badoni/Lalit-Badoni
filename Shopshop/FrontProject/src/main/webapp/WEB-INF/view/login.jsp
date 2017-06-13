@@ -33,7 +33,7 @@ background-color: rgba(240,248,255, 0.4);
 border-radius: 4px;
 margin: 0 auto;
 margin-top: 150px;
-}
+} 
 
 .container img 
 {

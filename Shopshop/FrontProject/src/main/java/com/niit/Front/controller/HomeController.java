@@ -40,5 +40,13 @@ CategoryDAO categoryDAO;
 	   return "Login";
 	   
    }
+   
+   @RequestMapping("/Ord")
+   public String logout()
+   {
+	   
+	   return "Thanks";
+	   
+   }
 	
 }

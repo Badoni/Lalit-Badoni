@@ -18,10 +18,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.niit.shopingbackend.backproject.DAO.CartDAO;
-import com.niit.shopingbackend.backproject.DAO.CustomerDAO;
 import com.niit.shopingbackend.backproject.DAO.ProductDAO;
 import com.niit.shopingbackend.backproject.model.Cart;
-import com.niit.shopingbackend.backproject.model.Customer;
 import com.niit.shopingbackend.backproject.model.Product;
 
 @Controller
@@ -36,13 +34,10 @@ public class CartController
 	private ProductDAO productDAO;
 
 	@Autowired
-	private CustomerDAO customerDAO;
-
-	@Autowired
 	private HttpSession session;
 
 	
-	@RequestMapping("/myCart")
+	@RequestMapping("/addCart")
 	public String getCart() 
 	{
 		logger.info("Starting getCart method in CartController");
@@ -75,7 +70,6 @@ public class CartController
             }
 			cart.setUsername(loggedInUsername);
 			cart.setStatus("NEW");
-			Customer customer = customerDAO.getUserByUserName(loggedInUsername);
 			Cart existCart = cartDAO.getCartByUsername(loggedInUsername, cart.getProductName());
 			if (existCart != null) 
             {
