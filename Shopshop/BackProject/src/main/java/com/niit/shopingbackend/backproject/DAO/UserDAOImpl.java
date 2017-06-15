@@ -28,6 +28,7 @@ public class UserDAOImpl implements UserDAO
 		
 		try
 		{
+			u.setUserid(u.getUsername());
 			Authorization auth=new Authorization();
 			auth.setUsername(u.getUserid());
 			auth.setRole("ROLE_USER");

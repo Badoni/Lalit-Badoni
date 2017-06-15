@@ -23,6 +23,11 @@
 	
 	<style>
 	
+	body
+	{
+	background-image: url("resources/images/CategoryBack.jpg");	
+    background-size: 150% 720px;
+	}
 
 .table
 	{

@@ -98,6 +98,8 @@ type="text/css">
 
 
 					<security:authorize access="hasRole('ROLE_USER')">
+					<li style="color: maroon"><font size="2%"><br>Welcome <i>${pageContext.request.userPrincipal.name}</i></font></li>
+					
 						<li><a href="Cart"><span
 								class="glyphicon glyphicon-shopping-cart"></span>CART</a></li>
 					</security:authorize>
@@ -107,8 +109,8 @@ type="text/css">
 								class="glyphicon glyphicon-user"></span>ADMIN</a></li>
 					</security:authorize>
 					<security:authorize access="isAuthenticated()">
-					<li style="color: maroon"><br><font size="3.5">Welcome <i>${pageContext.request.userPrincipal.name}</i></font></li>
 						<li><a href="${pageContext.request.contextPath}/logout">Logout</a></li>
+
 					</security:authorize>
 					<security:authorize access="isAnonymous()">
 						<li><a href="${pageContext.request.contextPath}/login"><span

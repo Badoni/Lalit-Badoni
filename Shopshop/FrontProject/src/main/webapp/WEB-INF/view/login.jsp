@@ -19,7 +19,7 @@
 body 
 {
     margin:  0 auto;
-    background-image: url("resources/images/login/logbackground.jpg");
+    background-image: url("resources/images/login/sinli.jpg");
     background-repeat: no-repeat;
     background-size: 100% 720px;
 }
@@ -76,11 +76,10 @@ margin-right: 30px;
 </style>
 <title>Login</title>
 </head>
-${msg}
 
 <body>
-
-
+<%-- ${msg}
+ --%>
 <div class="container">
 <img alt="error" src="resources/images/login/image1.png">
   <fm:form class="form-horizontal" action="login">

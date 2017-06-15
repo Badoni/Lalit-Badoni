@@ -20,6 +20,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style type="text/css">
+
+body
+	{
+	background-image: url("resources/images/SupplierBack.png");	
+    background-size: 150% 720px;
+	}
+
 .table
 	{
     border: 1px solid black;

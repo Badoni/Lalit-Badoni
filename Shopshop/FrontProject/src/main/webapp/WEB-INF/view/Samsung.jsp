@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-    <%@ page isELIgnored="false"%>
+<%@ page isELIgnored="false"%>
 
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="fm"%>
 
@@ -43,10 +43,6 @@
 						<div class="preview-pic tab-content">
 						  <div class="tab-pane active" id="pic-1"><img src="${image}/${productData.productId}.jpg"  alt="${productData.productname}" /></div>
 					</div>
-						<ul class="preview-thumbnail nav nav-tabs">
-						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="${image}/${productData.productId}.jpg"  alt="${productData.productname}" /></a></li>
-					</ul>
-						
 					</div>
 					<div class="details col-md-6">
 						<h3 class="product-title">${productData.productname}</h3>
@@ -55,32 +51,28 @@
 						<p class="vote"><strong>Many</strong> of buyers enjoyed this product!</p>
 						
 						<div class="action">
-						<a href="addCart">Add toCart</a>
+						 <a href='<pc:url value="/addCart/${productData.productId}"/>'>Add To Cart </a>
 						</div>
 				</div>
-				
+				<table>
 		      <div style="width:100%;border-top:1px solid silver">
-                        <p style="padding:15px;">
+                        <p style="padding:50px;">
                             <small>
-				            <h1>Many Users already Buy.  ${productData.productname} </h1>			
+				        Many Users already Buy.  ${productData.productname}		
 						    </small>
                         </p>
-                        <small>
+                        
                         <ul>
                             <li>${productData.productdescriptionfield1}</li>
                             <li>${productData.productdescriptionfield2}</li>
                             <li>${productData.productdescriptionfield3}</li>
                         </ul>  
-                        </small>
+                       
                     </div>
+                    </table>
                 </div>
 		</div>
 	</div>
-
-
-
-
-
-
+	</div>
 </body>
 </html>

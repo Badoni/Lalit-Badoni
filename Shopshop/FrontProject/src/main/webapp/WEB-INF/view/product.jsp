@@ -19,6 +19,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style type="text/css">
+
+body
+	{
+	background-image: url("resources/images/ProductBack.jpg");	
+    background-size: 150% 720px;
+	}
+
 .table
 	{
     border: 1px solid black;
@@ -147,7 +154,9 @@
 			<thead>
 				<tr>
 					<th>Product Name</th>
-					<th>Product Description</th>
+					<th>Product Description First</th>
+					<th>Product Description Second</th>
+					<th>Product Description Third</th>
 					<th>Product Price</th>
 					<th>Change</th>
 					<th>Delete</th>
@@ -162,7 +171,9 @@
 
 					<tr>
 						<td>${sup.productname}</td>
-						<td>${sup.productdescriptionfield1} </td>
+						<td>${sup.productdescriptionfield1}</td>
+						<td>${sup.productdescriptionfield2}</td>
+						<td>${sup.productdescriptionfield3}</td>
 						<td>${sup.productprice}</td>
 						<td><a href="updateProduct/${sup.productId}">Update</a></td>
 						<td><a href="deleteProduct/${sup.productId}">Delete</a></td>

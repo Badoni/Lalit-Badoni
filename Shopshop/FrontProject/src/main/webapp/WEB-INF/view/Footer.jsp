@@ -9,7 +9,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript">
-/* 
+ 
 #social-fb:hover {
     color: #3B5998;
 }
@@ -21,7 +21,7 @@
 }
 #social-em:hover {
     color: #f39c12;
-} */
+} 
 </script>
 </head>
 <body>
@@ -35,7 +35,7 @@
 	            <a href="https://www.google.com"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
 	            <a href="mailto:badonilalit@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
 </div>
-    <hr>
+<hr>
 </div>
 </body>
 </html>
