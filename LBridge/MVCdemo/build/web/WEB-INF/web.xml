@@ -9,10 +9,6 @@
         <servlet-class>Controller.DetailS</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>FindS</servlet-name>
-        <servlet-class>Controller.FindS</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>RefS</servlet-name>
         <servlet-class>Controller.RefS</servlet-class>
     </servlet>
@@ -23,10 +19,6 @@
     <servlet-mapping>
         <servlet-name>DetailS</servlet-name>
         <url-pattern>/DetailS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FindS</servlet-name>
-        <url-pattern>/FindS</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RefS</servlet-name>

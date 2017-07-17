@@ -81,7 +81,7 @@
                 <br><br><br><br>
                  <div class="container" >
          
-            <form class="form-horizontal" action="FindS" method="Post" >
+            <form class="form-horizontal" action="FindJsp.jsp" method="Post" >
                     <center>  
     <div class="form-group">
       <label class="control-label col-sm-4" for="cname" >Subject :</label>
